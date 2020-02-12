@@ -81,7 +81,7 @@ dependencies {
     api 'com.alibaba:arouter-api:1.5.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
     //权限申请
-//    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    api 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     api 'org.greenrobot:eventbus:3.1.1'
 
 }
