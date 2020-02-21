@@ -15,7 +15,7 @@ class ApiEngine<T> {
 
     private lateinit var httpCall: (suspend () -> ApiResponse<T>)
     private var beforeCall: () -> Unit = {}
-    private var onSuccess: (T?) -> Unit = {}
+    private var onSuccess: (T) -> Unit = {}
     private var onApiError: (e: Result.Error) -> Unit = {}
     private var onFinishCall: () -> Unit = {}
 
@@ -72,12 +72,12 @@ class ApiEngine<T> {
 
     /**
      * @param httpCall 接口
-     * @param onSuccess 成功的处理
+     * @param onSuccess 成功的处理 返回可空的数据
      * @param onApiError 失败的处理
      */
     suspend fun apiCall(
         httpCall: suspend () -> ApiResponse<T>,
-        onSuccess: (T?) -> Unit = {},
+        onSuccess: (T) -> Unit = {},
         onApiError: (e: Result.Error) -> Unit = {}, onBeforeCall: () -> Unit = {}
         , onFinishCall: () -> Unit = {}
     ) {
@@ -87,7 +87,7 @@ class ApiEngine<T> {
             when (result.errorCode) {
                 ApiCode.OK.code -> {
                     if (result.data == null) {
-                        Log.e("HTTP:API异常", "注意：data字段为null（API出错/或者是个无返回值的POST请求）")
+                        Log.e("HTTP:API异常", "注意：data字段为null（API出错/或者是个无返回值的请求）")
                     }
                     withContext(onSuccessDispatcher) { onSuccess(result.data) }
                 }
