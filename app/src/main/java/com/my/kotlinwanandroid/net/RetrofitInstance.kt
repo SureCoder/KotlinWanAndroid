@@ -1,3 +1,4 @@
+@file:JvmName("RetrofitInstance")
 package com.my.kotlinwanandroid.net
 
 import com.my.kotlinwanandroid.net.ServerConfig.Companion.BASE_URL

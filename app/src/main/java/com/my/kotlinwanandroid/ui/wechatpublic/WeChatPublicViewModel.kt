@@ -31,6 +31,7 @@ class WeChatPublicViewModel : BaseViewModel() {
                 .onFinish(Dispatchers.IO) { }
                 .start()
             val l:List<String?> = ArrayList()
+            
         }
 
 
