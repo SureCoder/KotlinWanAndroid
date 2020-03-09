@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.commit
 import com.my.kotlinwanandroid.R
+import com.my.kotlinwanandroid.base.BaseActivity
 import com.my.kotlinwanandroid.base.BaseFragment
 import com.my.kotlinwanandroid.databinding.ActivityMainBinding
 import com.my.kotlinwanandroid.ui.category.CategoryFragment
@@ -18,7 +19,7 @@ import com.my.kotlinwanandroid.ui.wechatpublic.WeChatPublicFragment
 import com.my.kotlinwanandroid.ui.wechatpublic.WeChatPublicViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val mFragmentList = mutableListOf<BaseFragment>()
     lateinit var mainBinding: ActivityMainBinding

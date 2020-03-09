@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.my.kotlinwanandroid.R
 import com.my.kotlinwanandroid.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class WeChatPublicFragment :BaseFragment(){
     companion object{
@@ -20,4 +21,8 @@ class WeChatPublicFragment :BaseFragment(){
     ): View? {
         return inflater.inflate(R.layout.fragment_public_wechat,container,false)
     }
+
+    override fun initView() {
+    }
+    override fun layoutId(): Int = R.layout.fragment_public_wechat
 }

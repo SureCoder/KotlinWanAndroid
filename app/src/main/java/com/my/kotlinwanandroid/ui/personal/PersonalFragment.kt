@@ -13,12 +13,8 @@ class PersonalFragment :BaseFragment() {
         fun newInstance() = PersonalFragment()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home,container,false)
-    }
 
+    override fun initView() {
+    }
+    override fun layoutId() = R.layout.fragment_personal
 }

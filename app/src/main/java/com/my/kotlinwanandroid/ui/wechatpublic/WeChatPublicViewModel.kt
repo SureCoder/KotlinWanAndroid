@@ -30,8 +30,7 @@ class WeChatPublicViewModel : BaseViewModel() {
                 .onSuccess { Log.e("test11",it.toString()) }
                 .onFinish(Dispatchers.IO) { }
                 .start()
-            val l:List<String?> = ArrayList()
-            
+
         }
 
 
